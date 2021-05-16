@@ -22,29 +22,27 @@
     .coral {
       background: var(--coral);
     }
-    .parent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .container {
+      display: grid;
+      width: 100%;
       height: 100%;
-      border: 1px dotted blue;
       resize: both;
-      overflow: auto;
+      grid-template-columns: minmax(150px, 25%) 1fr;
     }
-
-    .box{
-      padding: 1rem 1rem;
-      border-radius: 10px;
-      border: 1px dotted red;
-      font-size: 2rem;
-      text-align: center;
+    .sidebar {
+      padding: 1.5rem;
+      justify-content: left;
+    }
+    .content {
+      padding: 1.5rem;
+      text-align:center
     }
   </style>
 </head>
 <body>
-  <div class="parent blue">
-    <div class="box coral" contenteditable>
-      Edit the centered div
-    </div>
+  <main class="container">
+    <aside class="sidebar coral" contenteditable>Editable Sidebar[Min: 150px/Max: 25%]</aside>
+    <section class="content blue" contenteditable>Editable Content</section>
+  </main>
 </body>
 </html>
